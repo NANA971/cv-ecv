@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.image {
+    position: relative;
+    width: 400px;
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+    background: #F8A0CE;
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.image__description {
+    font-size: 1.25em;
+    margin-top: 0.25em;
+}
+
+body{
+  font-family: Roboto;
+  font-weight: 300;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+a{
+  text-decoration: none;
+  color: #4472C4;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+p{
+  margin: 0 0 1rem;
+}
+
+h1{
+  margin: 0 0 1rem;
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+  color : #F8A0CE
+}
+
+h2{
+  margin: 0 0 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color : #FCC2E0
+}
+
+::-moz-selection{
+  background-color : #F8A0CE;
+  color : #fff
+}
+::selection{
+  background-color : #F8A0CE;
+  color : #fff
+}
+
+.text-pink{
+  color: #F8A0CE;
+}
+
+.text-babypink{
+  color: #F8A0CE;
+}
+
+.text-uppercase{
+  text-transform: uppercase;
+}
+
+.icon{
+  margin-right: .5rem;
+}
+
+.cv-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "left-column right-column right-column";
+  width: 1200px;
+  margin: 100px auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.right-column{
+  grid-area: right-column;
+  display: grid;
+  grid-template-rows: 250px 1fr;
+  grid-template-areas:
+    "header"
+    "content";
+}
